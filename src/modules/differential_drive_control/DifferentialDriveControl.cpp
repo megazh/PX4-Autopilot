@@ -142,12 +142,10 @@ void DifferentialDriveControl::Run()
 		float body_angular_velocity = _vehicle_angular_velocity.xyz[2];
 
 		matrix::Vector3f ground_speed(_vehicle_local_position.vx, _vehicle_local_position.vy,  _vehicle_local_position.vz);
-		matrix::Vector2f ground_speed_2d(ground_speed);
 
 		// Velocity in body frame
 		const Dcmf R_to_body(Quatf(_vehicle_attitude.q).inversed());
-		const Vector3f velocity = R_to_body * Vector3f(ground_speed(0), ground_speed(1), ground_speed(2));
-		const float x_vel = velocity(0);
+		const Vector3f velocity_in_body_frame = R_to_body * Vector3f(ground_speed(0), ground_speed(1), ground_speed(2));
 
 		matrix::Vector2f guidance_output =
 			_differential_guidance_controller.computeGuidance(
@@ -155,7 +153,7 @@ void DifferentialDriveControl::Run()
 				current_waypoint,
 				next_waypoint,
 				vehicle_yaw,
-				x_vel,
+				velocity_in_body_frame(0),
 				body_angular_velocity,
 				dt
 			);

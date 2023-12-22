@@ -71,15 +71,6 @@ parameters:
         increment: 0.01
         decimal: 2
         default: 0.0
-      RDD_D_YAW_RATE:
-        description:
-          short: Derivative gain for yaw rate
-        type: float
-        min: 0
-        max: 100
-        increment: 0.01
-        decimal: 2
-        default: 0.0
       RDD_P_SPEED:
         description:
           short: Proportional gain for speed
@@ -92,15 +83,6 @@ parameters:
       RDD_I_SPEED:
         description:
           short: Integral gain for ground speed
-        type: float
-        min: 0
-        max: 100
-        increment: 0.01
-        decimal: 2
-        default: 0.0
-      RDD_D_SPEED:
-        description:
-          short: Derivative gain for speed
         type: float
         min: 0
         max: 100

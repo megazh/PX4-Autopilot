@@ -120,7 +120,7 @@ private:
 	bool _mission_driving = false;
 	bool _first_waypoint_intialized = false;
 
-	hrt_abstime _time_stamp_last{}; /**< time stamp when task was last updated */
+	hrt_abstime _time_stamp_last{0}; /**< time stamp when task was last updated */
 	static constexpr uint64_t _timeout = 500000; /**< maximal time in us before a loop or data times out */
 
 	matrix::Vector2d _previous_waypoint = {0.f, 0.f};

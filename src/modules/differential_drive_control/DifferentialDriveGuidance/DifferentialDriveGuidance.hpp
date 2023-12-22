@@ -125,11 +125,9 @@ private:
 
 	DEFINE_PARAMETERS(
 		(ParamFloat<px4::params::RDD_P_YAW_RATE>) _param_rdd_p_gain_yaw_rate,
-		(ParamFloat<px4::params::RDD_I_YAW_RATE>) _param_rdd_d_gain_yaw_rate,
-		(ParamFloat<px4::params::RDD_D_YAW_RATE>) _param_rdd_i_gain_yaw_rate,
+		(ParamFloat<px4::params::RDD_I_YAW_RATE>) _param_rdd_i_gain_yaw_rate,
 		(ParamFloat<px4::params::RDD_P_SPEED>) _param_rdd_p_gain_speed,
 		(ParamFloat<px4::params::RDD_I_SPEED>) _param_rdd_i_gain_speed,
-		(ParamFloat<px4::params::RDD_D_SPEED>) _param_rdd_d_gain_speed,
 		(ParamFloat<px4::params::NAV_ACC_RAD>) _param_rdd_accepted_waypoint_radius,
 		(ParamFloat<px4::params::RDD_VEL_ALGN>) _param_rdd_velocity_alignment_subtraction,
 		(ParamFloat<px4::params::RDD_WAYPT_OFST>) _param_rdd_waypoint_offset,
